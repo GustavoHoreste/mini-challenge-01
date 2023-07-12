@@ -2,7 +2,7 @@
 
 ## Padrao do github
 
-<img width="666" alt="image" src="https://github.com/GustavoHoreste/mini-challenge-01/assets/101297032/870b5e3b-61b8-4ac3-9017-0166ec56d7a7">
+<img width="473" alt="image" src="https://github.com/GustavoHoreste/mini-challenge-01/assets/101297032/febb888d-5828-4d07-a245-dedc7e804dc5">
 
 1 - Desenvolva na devBranch(verde), funcionalidade pronta vai para homologacao.
 
