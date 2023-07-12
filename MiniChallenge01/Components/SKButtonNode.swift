@@ -19,7 +19,7 @@ class SKButtonNode: SKNode {
         self.image = image
         self.label = label
         self.action = action
-        super.init() //Inito obrigatório.
+        super.init() //Init obrigatório.
         self.isUserInteractionEnabled = true //Permite que o usuário interaja com a class.
         
         self.addChild(image)
