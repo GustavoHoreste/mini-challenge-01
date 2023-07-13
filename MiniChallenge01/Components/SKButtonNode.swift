@@ -25,7 +25,7 @@ class SKButtonNode: SKNode {
         label.position = CGPoint(x: 0, y: -10)
         self.addChild(image)
         image.addChild(label)
-        
+                
     }
     
     //Inicializador obrigatório.

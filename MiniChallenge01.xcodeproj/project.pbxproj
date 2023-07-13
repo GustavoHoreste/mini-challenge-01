@@ -14,14 +14,30 @@
 		AF40FDEA2A5DC6D10015D7A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FDE92A5DC6D10015D7A8 /* ViewController.swift */; };
 		AF40FDEE2A5DC75A0015D7A8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FDED2A5DC75A0015D7A8 /* GameScene.swift */; };
 		AF40FDF32A5DCCE50015D7A8 /* SKButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FDF22A5DCCE50015D7A8 /* SKButtonNode.swift */; };
-		AF40FDF92A5DDFCF0015D7A8 /* menuPauseBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDF52A5DDFCF0015D7A8 /* menuPauseBackground.png */; };
-		AF40FDFA2A5DDFCF0015D7A8 /* playButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDF62A5DDFCF0015D7A8 /* playButtonBackground.png */; };
-		AF40FDFB2A5DDFCF0015D7A8 /* settingsButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDF72A5DDFCF0015D7A8 /* settingsButtonBackground.png */; };
-		AF40FDFC2A5DDFCF0015D7A8 /* repeatButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDF82A5DDFCF0015D7A8 /* repeatButtonBackground.png */; };
-		AF40FDFE2A5DDFF80015D7A8 /* exitButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDFD2A5DDFF80015D7A8 /* exitButtonBackground.png */; };
 		AF40FE012A5DEADC0015D7A8 /* MenuPauseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FE002A5DEADC0015D7A8 /* MenuPauseFunc.swift */; };
 		AF7CA02A2A605B2B00AFCCC1 /* MeenuPause.sks in Resources */ = {isa = PBXBuildFile; fileRef = AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */; };
 		AF7CA02C2A605B7E00AFCCC1 /* MenuPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */; };
+		AF7CA02E2A6073D700AFCCC1 /* botao_pause_x2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7CA02D2A6073D700AFCCC1 /* botao_pause_x2.png */; };
+		AFE8821A2A60823A009DF268 /* buttonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE8820F2A608239009DF268 /* buttonBackground.png */; };
+		AFE8821B2A60823A009DF268 /* joystickButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882102A608239009DF268 /* joystickButtonBackground.png */; };
+		AFE8821C2A60823A009DF268 /* checkButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882112A608239009DF268 /* checkButtonBackground.png */; };
+		AFE8821D2A60823A009DF268 /* languageButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882122A608239009DF268 /* languageButtonBackground.png */; };
+		AFE8821E2A60823A009DF268 /* backgroundPequeno.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882132A608239009DF268 /* backgroundPequeno.png */; };
+		AFE8821F2A60823A009DF268 /* musicButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882142A60823A009DF268 /* musicButtonBackground.png */; };
+		AFE882202A60823A009DF268 /* musicMuteButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882152A60823A009DF268 /* musicMuteButtonBackground.png */; };
+		AFE882212A60823A009DF268 /* settingsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882162A60823A009DF268 /* settingsBackground.png */; };
+		AFE882222A60823A009DF268 /* soundButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882172A60823A009DF268 /* soundButtonBackground.png */; };
+		AFE882232A60823A009DF268 /* soundMuteButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882182A60823A009DF268 /* soundMuteButtonBackground.png */; };
+		AFE882242A60823A009DF268 /* aboutButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882192A60823A009DF268 /* aboutButtonBackground.png */; };
+		AFE8822A2A608360009DF268 /* backgroundMenuPause.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882252A608360009DF268 /* backgroundMenuPause.png */; };
+		AFE8822B2A608360009DF268 /* exitButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882262A608360009DF268 /* exitButtonBackground.png */; };
+		AFE8822C2A608360009DF268 /* resumeButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882272A608360009DF268 /* resumeButtonBackground.png */; };
+		AFE8822D2A608360009DF268 /* restartButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882282A608360009DF268 /* restartButtonBackground.png */; };
+		AFE8822E2A608360009DF268 /* settingsButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882292A608360009DF268 /* settingsButtonBackground.png */; };
+		AFE882302A6083AD009DF268 /* MenuSettings.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE8822F2A6083AD009DF268 /* MenuSettings.sks */; };
+		AFE882322A6086F7009DF268 /* MenuPause.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882312A6086F7009DF268 /* MenuPause.sks */; };
+		AFE882342A6088BD009DF268 /* MenuSettingsJoystick.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */; };
+		AFE882362A608923009DF268 /* MenuSettingsLanguage.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,16 +49,32 @@
 		AF40FDE92A5DC6D10015D7A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF40FDED2A5DC75A0015D7A8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AF40FDF22A5DCCE50015D7A8 /* SKButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButtonNode.swift; sourceTree = "<group>"; };
-		AF40FDF52A5DDFCF0015D7A8 /* menuPauseBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuPauseBackground.png; sourceTree = "<group>"; };
-		AF40FDF62A5DDFCF0015D7A8 /* playButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButtonBackground.png; sourceTree = "<group>"; };
-		AF40FDF72A5DDFCF0015D7A8 /* settingsButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsButtonBackground.png; sourceTree = "<group>"; };
-		AF40FDF82A5DDFCF0015D7A8 /* repeatButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeatButtonBackground.png; sourceTree = "<group>"; };
-		AF40FDFD2A5DDFF80015D7A8 /* exitButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButtonBackground.png; sourceTree = "<group>"; };
 		AF40FE002A5DEADC0015D7A8 /* MenuPauseFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPauseFunc.swift; sourceTree = "<group>"; };
 		AF40FE022A5DF1740015D7A8 /* alagard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alagard.ttf; sourceTree = "<group>"; };
 		AF40FE032A5DF1890015D7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MeenuPause.sks; sourceTree = "<group>"; };
 		AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPause.swift; sourceTree = "<group>"; };
+		AF7CA02D2A6073D700AFCCC1 /* botao_pause_x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botao_pause_x2.png; sourceTree = "<group>"; };
+		AFE8820F2A608239009DF268 /* buttonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBackground.png; sourceTree = "<group>"; };
+		AFE882102A608239009DF268 /* joystickButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystickButtonBackground.png; sourceTree = "<group>"; };
+		AFE882112A608239009DF268 /* checkButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkButtonBackground.png; sourceTree = "<group>"; };
+		AFE882122A608239009DF268 /* languageButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = languageButtonBackground.png; sourceTree = "<group>"; };
+		AFE882132A608239009DF268 /* backgroundPequeno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPequeno.png; sourceTree = "<group>"; };
+		AFE882142A60823A009DF268 /* musicButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicButtonBackground.png; sourceTree = "<group>"; };
+		AFE882152A60823A009DF268 /* musicMuteButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicMuteButtonBackground.png; sourceTree = "<group>"; };
+		AFE882162A60823A009DF268 /* settingsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsBackground.png; sourceTree = "<group>"; };
+		AFE882172A60823A009DF268 /* soundButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundButtonBackground.png; sourceTree = "<group>"; };
+		AFE882182A60823A009DF268 /* soundMuteButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundMuteButtonBackground.png; sourceTree = "<group>"; };
+		AFE882192A60823A009DF268 /* aboutButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutButtonBackground.png; sourceTree = "<group>"; };
+		AFE882252A608360009DF268 /* backgroundMenuPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundMenuPause.png; sourceTree = "<group>"; };
+		AFE882262A608360009DF268 /* exitButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButtonBackground.png; sourceTree = "<group>"; };
+		AFE882272A608360009DF268 /* resumeButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resumeButtonBackground.png; sourceTree = "<group>"; };
+		AFE882282A608360009DF268 /* restartButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restartButtonBackground.png; sourceTree = "<group>"; };
+		AFE882292A608360009DF268 /* settingsButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsButtonBackground.png; sourceTree = "<group>"; };
+		AFE8822F2A6083AD009DF268 /* MenuSettings.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuSettings.sks; sourceTree = "<group>"; };
+		AFE882312A6086F7009DF268 /* MenuPause.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuPause.sks; sourceTree = "<group>"; };
+		AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuSettingsJoystick.sks; sourceTree = "<group>"; };
+		AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuSettingsLanguage.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				AF40FDED2A5DC75A0015D7A8 /* GameScene.swift */,
+				AFE8822F2A6083AD009DF268 /* MenuSettings.sks */,
+				AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */,
+				AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */,
+				AFE882312A6086F7009DF268 /* MenuPause.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -96,7 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				AF40FE022A5DF1740015D7A8 /* alagard.ttf */,
-				AF40FDFF2A5DE0040015D7A8 /* MenuPause */,
+				AFE8820E2A607F86009DF268 /* MenuSettingsAssets */,
+				AF40FDFF2A5DE0040015D7A8 /* MenuPauseAssets */,
 				AF40FDDF2A5DC6920015D7A8 /* Assets.xcassets */,
 				AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */,
 				AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */,
@@ -124,16 +161,35 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		AF40FDFF2A5DE0040015D7A8 /* MenuPause */ = {
+		AF40FDFF2A5DE0040015D7A8 /* MenuPauseAssets */ = {
 			isa = PBXGroup;
 			children = (
-				AF40FDF52A5DDFCF0015D7A8 /* menuPauseBackground.png */,
-				AF40FDF62A5DDFCF0015D7A8 /* playButtonBackground.png */,
-				AF40FDF82A5DDFCF0015D7A8 /* repeatButtonBackground.png */,
-				AF40FDF72A5DDFCF0015D7A8 /* settingsButtonBackground.png */,
-				AF40FDFD2A5DDFF80015D7A8 /* exitButtonBackground.png */,
+				AFE882262A608360009DF268 /* exitButtonBackground.png */,
+				AFE882252A608360009DF268 /* backgroundMenuPause.png */,
+				AFE882282A608360009DF268 /* restartButtonBackground.png */,
+				AFE882272A608360009DF268 /* resumeButtonBackground.png */,
+				AFE882292A608360009DF268 /* settingsButtonBackground.png */,
+				AF7CA02D2A6073D700AFCCC1 /* botao_pause_x2.png */,
 			);
-			path = MenuPause;
+			path = MenuPauseAssets;
+			sourceTree = "<group>";
+		};
+		AFE8820E2A607F86009DF268 /* MenuSettingsAssets */ = {
+			isa = PBXGroup;
+			children = (
+				AFE882192A60823A009DF268 /* aboutButtonBackground.png */,
+				AFE882132A608239009DF268 /* backgroundPequeno.png */,
+				AFE8820F2A608239009DF268 /* buttonBackground.png */,
+				AFE882112A608239009DF268 /* checkButtonBackground.png */,
+				AFE882102A608239009DF268 /* joystickButtonBackground.png */,
+				AFE882122A608239009DF268 /* languageButtonBackground.png */,
+				AFE882142A60823A009DF268 /* musicButtonBackground.png */,
+				AFE882152A60823A009DF268 /* musicMuteButtonBackground.png */,
+				AFE882162A60823A009DF268 /* settingsBackground.png */,
+				AFE882172A60823A009DF268 /* soundButtonBackground.png */,
+				AFE882182A60823A009DF268 /* soundMuteButtonBackground.png */,
+			);
+			path = MenuSettingsAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,14 +250,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE882232A60823A009DF268 /* soundMuteButtonBackground.png in Resources */,
+				AF7CA02E2A6073D700AFCCC1 /* botao_pause_x2.png in Resources */,
+				AFE8822E2A608360009DF268 /* settingsButtonBackground.png in Resources */,
+				AFE882322A6086F7009DF268 /* MenuPause.sks in Resources */,
+				AFE882212A60823A009DF268 /* settingsBackground.png in Resources */,
+				AFE8821B2A60823A009DF268 /* joystickButtonBackground.png in Resources */,
+				AFE8822C2A608360009DF268 /* resumeButtonBackground.png in Resources */,
+				AFE8821C2A60823A009DF268 /* checkButtonBackground.png in Resources */,
+				AFE882362A608923009DF268 /* MenuSettingsLanguage.sks in Resources */,
+				AFE8822D2A608360009DF268 /* restartButtonBackground.png in Resources */,
 				AF40FDDE2A5DC6910015D7A8 /* Main.storyboard in Resources */,
-				AF40FDFE2A5DDFF80015D7A8 /* exitButtonBackground.png in Resources */,
-				AF40FDFC2A5DDFCF0015D7A8 /* repeatButtonBackground.png in Resources */,
-				AF40FDF92A5DDFCF0015D7A8 /* menuPauseBackground.png in Resources */,
+				AFE882202A60823A009DF268 /* musicMuteButtonBackground.png in Resources */,
+				AFE8822A2A608360009DF268 /* backgroundMenuPause.png in Resources */,
+				AFE882302A6083AD009DF268 /* MenuSettings.sks in Resources */,
+				AFE882342A6088BD009DF268 /* MenuSettingsJoystick.sks in Resources */,
+				AFE882242A60823A009DF268 /* aboutButtonBackground.png in Resources */,
+				AFE8821F2A60823A009DF268 /* musicButtonBackground.png in Resources */,
+				AFE8821E2A60823A009DF268 /* backgroundPequeno.png in Resources */,
+				AFE8822B2A608360009DF268 /* exitButtonBackground.png in Resources */,
+				AFE882222A60823A009DF268 /* soundButtonBackground.png in Resources */,
 				AF7CA02A2A605B2B00AFCCC1 /* MeenuPause.sks in Resources */,
-				AF40FDFB2A5DDFCF0015D7A8 /* settingsButtonBackground.png in Resources */,
+				AFE8821D2A60823A009DF268 /* languageButtonBackground.png in Resources */,
+				AFE8821A2A60823A009DF268 /* buttonBackground.png in Resources */,
 				AF40FDE02A5DC6920015D7A8 /* Assets.xcassets in Resources */,
-				AF40FDFA2A5DDFCF0015D7A8 /* playButtonBackground.png in Resources */,
 				AF40FDE32A5DC6920015D7A8 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

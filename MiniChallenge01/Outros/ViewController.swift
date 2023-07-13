@@ -17,8 +17,9 @@ class ViewController: UIViewController {
         self.view = gameView
         
         let gameScene:GameScene = GameScene(size: gameView.frame.size)
-        let menuScene = SKScene(fileNamed: "MeenuPause")
-        gameView.presentScene(menuScene)
+//        let menuScene = SKScene(fileNamed: "MeenuPause")
+        
+        gameView.presentScene(gameScene)
 
         
         gameView.ignoresSiblingOrder = true

@@ -7,8 +7,10 @@
 
 import UIKit
 import SpriteKit
+import SwiftUI
 
 let menuBackground:SKSpriteNode = SKSpriteNode(color: .systemGray4, size: CGSize(width: 250, height: 400))
+let menuSettingsBackground:SKSpriteNode = SKSpriteNode(color: .systemGray3, size: CGSize(width: 250, height: 500))
 
 var menuAberto:Bool? = false
 
@@ -25,11 +27,11 @@ class GameScene: SKScene {
                 menuAberto = true
             }
         })
+        
         btnPause.position = CGPoint(x: frame.maxX - 70, y: frame.maxY - 70)
         self.addChild(btnPause)
         
-        
-        
+
         
     }
     
@@ -57,7 +59,7 @@ class GameScene: SKScene {
             
             let spriteBtnSettings:SKSpriteNode = SKSpriteNode(color: .systemGray, size: CGSize(width: 200, height: 70))
             let btnSettings:SKButtonNode = SKButtonNode(image: spriteBtnSettings, label: SKLabelNode(text: "Settings"), action: {
-                print("settings")
+                self.openMenuSettings()
             })
             btnSettings.position = CGPoint(x: 0, y: -40)
             menuBackground.addChild(btnSettings)
@@ -83,6 +85,47 @@ class GameScene: SKScene {
             menuBackground.removeFromParent()
             menuAberto = false
         }
+    }
+    
+    func openMenuSettings() {
+  
+        menuSettingsBackground.position = CGPoint(x: frame.midX, y: frame.midY)
+        menuSettingsBackground.zPosition = -1
+        self.addChild(menuSettingsBackground)
+
+        let spriteBtnMusica = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let btnMusica = SKButtonNode(image: spriteBtnMusica, label: SKLabelNode(text: "Música")) {
+            print("musica")
+        }
+        btnMusica.position = CGPoint(x: 0, y: 180)
+        menuSettingsBackground.addChild(btnMusica)
+
+        let spriteBtnSom = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let btnSom = SKButtonNode(image: spriteBtnSom, label: SKLabelNode(text: "Som")) {
+            print("som")
+        }
+        btnSom.position = CGPoint(x: 0, y: 90)
+        menuSettingsBackground.addChild(btnSom)
+
+        let spriteBtnJoystick = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let btnJoystick = SKButtonNode(image: spriteBtnJoystick, label: SKLabelNode(text: "Joystick")) {
+            print("Joystick")
+        }
+        menuSettingsBackground.addChild(btnJoystick)
+
+        let spriteBtnIdioma = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let btnIdioma = SKButtonNode(image: spriteBtnIdioma, label: SKLabelNode(text: "Idioma")) {
+            print("idioma")
+        }
+        btnIdioma.position = CGPoint(x: 0, y: -90)
+        menuSettingsBackground.addChild(btnIdioma)
+
+        let spriteBtnSobre = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let btnSobre = SKButtonNode(image: spriteBtnSobre, label: SKLabelNode(text: "Sobre")) {
+            print("sobre")
+        }
+        btnSobre.position = CGPoint(x: 0, y: -180)
+        menuSettingsBackground.addChild(btnSobre)
     }
 }
 
@@ -132,3 +175,5 @@ class GameScene: SKScene {
  self.addChild(node)
  node.position = CGPoint(x: 0, y: view.bounds.size.height/2)
  */
+
+
