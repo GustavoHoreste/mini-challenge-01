@@ -7,12 +7,31 @@
 
 import UIKit
 import SpriteKit
+let menuBackground:SKSpriteNode = SKSpriteNode(color: .systemGray4, size: CGSize(width: 250, height: 400))
+
+var menuAberto:Bool? = false
 
 class GameScene: SKScene {
     override func didMove(to view: SKView) {
         self.view?.backgroundColor = .blue
         
-        let menuBackground:SKSpriteNode = SKSpriteNode(color: .systemGray4, size: CGSize(width: 250, height: 400))
+        let spriteBtnPause:SKSpriteNode = SKSpriteNode(color: .systemBlue, size: CGSize(width: 50, height: 50))
+        let btnPause:SKButtonNode = SKButtonNode(image: spriteBtnPause, label: SKLabelNode(text: ""), action: {
+            if(menuAberto == false) {
+                self.openMenu()
+                
+                menuAberto = true
+            }
+        })
+        btnPause.position = CGPoint(x: frame.maxX - 70, y: frame.maxY - 70)
+        self.addChild(btnPause)
+        
+                                                       
+                                                       
+                                                       
+    }
+    
+    func openMenu() {
         menuBackground.position = CGPoint(x: frame.midX, y: frame.midY)
         menuBackground.zPosition = -1
         self.addChild(menuBackground)
@@ -45,14 +64,16 @@ class GameScene: SKScene {
         btnExit.position = CGPoint(x: 0, y: -130)
         menuBackground.addChild(btnExit)
         
-        
-                                                       
-                                                       
-                                                       
+        let spriteBtnSairMenu:SKSpriteNode = SKSpriteNode(color: .systemMint, size: CGSize(width: 30, height: 30))
+        let btnSairMenu:SKButtonNode = SKButtonNode(image: spriteBtnSairMenu, label: SKLabelNode(text: ""), action: {
+            self.closeMenu()
+        })
+        btnSairMenu.position = CGPoint(x: 100, y: 170)
+        menuBackground.addChild(btnSairMenu)
     }
     
-    func openMenu() {
-        
+    func closeMenu() {
+        menuBackground.removeFromParent()
     }
 }
 
