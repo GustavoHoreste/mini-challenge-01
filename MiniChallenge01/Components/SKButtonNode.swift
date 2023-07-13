@@ -26,7 +26,7 @@ class SKButtonNode: SKNode {
         self.addChild(image)
         image.addChild(label)
         
-        
+        print("teste")
 
     }
     
