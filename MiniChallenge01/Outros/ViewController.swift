@@ -17,7 +17,9 @@ class ViewController: UIViewController {
         self.view = gameView
         
         let gameScene:GameScene = GameScene(size: gameView.frame.size)
-        gameView.presentScene(gameScene)
+        let menuScene = SKScene(fileNamed: "MeenuPause")
+        gameView.presentScene(menuScene)
+
         
         gameView.ignoresSiblingOrder = true
         gameView.showsFPS = true

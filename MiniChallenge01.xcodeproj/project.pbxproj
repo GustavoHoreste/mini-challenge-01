@@ -19,7 +19,9 @@
 		AF40FDFB2A5DDFCF0015D7A8 /* settingsButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDF72A5DDFCF0015D7A8 /* settingsButtonBackground.png */; };
 		AF40FDFC2A5DDFCF0015D7A8 /* repeatButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDF82A5DDFCF0015D7A8 /* repeatButtonBackground.png */; };
 		AF40FDFE2A5DDFF80015D7A8 /* exitButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDFD2A5DDFF80015D7A8 /* exitButtonBackground.png */; };
-		AF40FE012A5DEADC0015D7A8 /* MenuPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FE002A5DEADC0015D7A8 /* MenuPause.swift */; };
+		AF40FE012A5DEADC0015D7A8 /* MenuPauseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FE002A5DEADC0015D7A8 /* MenuPauseFunc.swift */; };
+		AF7CA02A2A605B2B00AFCCC1 /* MeenuPause.sks in Resources */ = {isa = PBXBuildFile; fileRef = AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */; };
+		AF7CA02C2A605B7E00AFCCC1 /* MenuPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +38,11 @@
 		AF40FDF72A5DDFCF0015D7A8 /* settingsButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsButtonBackground.png; sourceTree = "<group>"; };
 		AF40FDF82A5DDFCF0015D7A8 /* repeatButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeatButtonBackground.png; sourceTree = "<group>"; };
 		AF40FDFD2A5DDFF80015D7A8 /* exitButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButtonBackground.png; sourceTree = "<group>"; };
-		AF40FE002A5DEADC0015D7A8 /* MenuPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPause.swift; sourceTree = "<group>"; };
+		AF40FE002A5DEADC0015D7A8 /* MenuPauseFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPauseFunc.swift; sourceTree = "<group>"; };
 		AF40FE022A5DF1740015D7A8 /* alagard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alagard.ttf; sourceTree = "<group>"; };
 		AF40FE032A5DF1890015D7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MeenuPause.sks; sourceTree = "<group>"; };
+		AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPause.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 				AF40FE022A5DF1740015D7A8 /* alagard.ttf */,
 				AF40FDFF2A5DE0040015D7A8 /* MenuPause */,
 				AF40FDDF2A5DC6920015D7A8 /* Assets.xcassets */,
+				AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */,
+				AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -101,7 +107,7 @@
 		AF40FDF12A5DCA380015D7A8 /* Outros */ = {
 			isa = PBXGroup;
 			children = (
-				AF40FE002A5DEADC0015D7A8 /* MenuPause.swift */,
+				AF40FE002A5DEADC0015D7A8 /* MenuPauseFunc.swift */,
 				AF40FDD22A5DC6910015D7A8 /* AppDelegate.swift */,
 				AF40FDE92A5DC6D10015D7A8 /* ViewController.swift */,
 				AF40FDDC2A5DC6910015D7A8 /* Main.storyboard */,
@@ -192,6 +198,7 @@
 				AF40FDFE2A5DDFF80015D7A8 /* exitButtonBackground.png in Resources */,
 				AF40FDFC2A5DDFCF0015D7A8 /* repeatButtonBackground.png in Resources */,
 				AF40FDF92A5DDFCF0015D7A8 /* menuPauseBackground.png in Resources */,
+				AF7CA02A2A605B2B00AFCCC1 /* MeenuPause.sks in Resources */,
 				AF40FDFB2A5DDFCF0015D7A8 /* settingsButtonBackground.png in Resources */,
 				AF40FDE02A5DC6920015D7A8 /* Assets.xcassets in Resources */,
 				AF40FDFA2A5DDFCF0015D7A8 /* playButtonBackground.png in Resources */,
@@ -209,8 +216,9 @@
 				AF40FDEE2A5DC75A0015D7A8 /* GameScene.swift in Sources */,
 				AF40FDF32A5DCCE50015D7A8 /* SKButtonNode.swift in Sources */,
 				AF40FDEA2A5DC6D10015D7A8 /* ViewController.swift in Sources */,
-				AF40FE012A5DEADC0015D7A8 /* MenuPause.swift in Sources */,
+				AF40FE012A5DEADC0015D7A8 /* MenuPauseFunc.swift in Sources */,
 				AF40FDD32A5DC6910015D7A8 /* AppDelegate.swift in Sources */,
+				AF7CA02C2A605B7E00AFCCC1 /* MenuPause.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

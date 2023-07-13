@@ -48,3 +48,35 @@ class SKButtonNode: SKNode {
  
  self.addChild(btn)
  */
+
+//MARK: MESMA CLASSE PORÉM DO TIPO SKSpriteNode.
+//import Foundation
+//import SpriteKit
+//
+////Class para usarmos btn no projeto.
+//class SKButtonNode: SKSpriteNode {
+//
+//    var image:SKTexture? // Sprite do btn.
+//    var label:SKLabelNode?  // Texto contido no btn.
+//    var action: (() -> Void)? //Ação feita ao btn ser clicado.
+//
+//    init(image: SKTexture, label: SKLabelNode, action: @escaping (() -> Void)) {
+//        self.image = image
+//        self.label = label
+//        self.action = action
+//        super.init(texture: image, color: .clear, size: image.size()) //Inito obrigatório.
+//        self.isUserInteractionEnabled = true //Permite que o usuário interaja com a class.
+////        self.size = image.size
+//        label.position = CGPoint(x: 0, y: -10)
+//
+//    }
+//
+//    //Inicializador obrigatório.
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.action?()
+//    }
+//}
