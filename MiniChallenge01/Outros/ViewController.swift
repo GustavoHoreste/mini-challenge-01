@@ -9,25 +9,39 @@ import UIKit
 import SpriteKit
 
 class ViewController: UIViewController {
+    
+    var tilemapNode: SKTileMapNode!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gameView:SKView = SKView(frame: self.view.frame)
-        self.view = gameView
-        
-        let gameScene:GameScene = GameScene(size: gameView.frame.size)
-//        let menuScene = SKScene(fileNamed: "MeenuPause")
-        print(gameView.frame.size)
-        gameView.presentScene(gameScene)
-
-        
-        gameView.ignoresSiblingOrder = false
-        gameView.showsFPS = true
-        gameView.showsNodeCount = true
-        gameView.showsPhysics = true
+        if let view = self.view as! SKView? {
+            // Load the SKScene from 'GameScene.sks'
+            if let scene = SKScene(fileNamed: "TileMap") {
+                // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = false
+            
+            view.showsFPS = true
+            view.showsNodeCount = true
+            view.showsPhysics = true
+        }
     }
-    
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
