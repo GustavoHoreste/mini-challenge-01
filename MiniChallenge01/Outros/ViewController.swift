@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         let gameScene:GameScene = GameScene(size: gameView.frame.size)
 //        let menuScene = SKScene(fileNamed: "MeenuPause")
-        
+        print(gameView.frame.size)
         gameView.presentScene(gameScene)
 
         

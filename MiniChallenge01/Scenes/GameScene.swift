@@ -9,7 +9,8 @@ import UIKit
 import SpriteKit
 import SwiftUI
 
-let menuBackground:SKSpriteNode = SKSpriteNode(color: .systemGray4, size: CGSize(width: 250, height: 400))
+let menuBackground:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "backgroundMenuPause"), size: CGSize(width: 615, height: 879))
+
 let menuSettingsBackground:SKSpriteNode = SKSpriteNode(color: .systemGray3, size: CGSize(width: 250, height: 500))
 
 var menuAberto:Bool? = false
@@ -19,7 +20,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         self.view?.backgroundColor = .blue
         
-        let spriteBtnPause:SKSpriteNode = SKSpriteNode(color: .systemBlue, size: CGSize(width: 50, height: 50))
+        let spriteBtnPause = SKSpriteNode(texture: SKTexture(imageNamed: "pauseButtonBackground"))
         let btnPause:SKButtonNode = SKButtonNode(image: spriteBtnPause, label: SKLabelNode(text: ""), action: {
             if(menuAberto == false) {
                 self.openMenu()

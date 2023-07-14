@@ -38,6 +38,7 @@
 		AFE882322A6086F7009DF268 /* MenuPause.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882312A6086F7009DF268 /* MenuPause.sks */; };
 		AFE882342A6088BD009DF268 /* MenuSettingsJoystick.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */; };
 		AFE882362A608923009DF268 /* MenuSettingsLanguage.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */; };
+		AFE882382A609DA7009DF268 /* pauseButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882372A609DA7009DF268 /* pauseButtonBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		AFE882312A6086F7009DF268 /* MenuPause.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuPause.sks; sourceTree = "<group>"; };
 		AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuSettingsJoystick.sks; sourceTree = "<group>"; };
 		AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuSettingsLanguage.sks; sourceTree = "<group>"; };
+		AFE882372A609DA7009DF268 /* pauseButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButtonBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +123,9 @@
 			children = (
 				AF40FDED2A5DC75A0015D7A8 /* GameScene.swift */,
 				AFE8822F2A6083AD009DF268 /* MenuSettings.sks */,
-				AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */,
 				AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */,
 				AFE882312A6086F7009DF268 /* MenuPause.sks */,
+				AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				AF40FE022A5DF1740015D7A8 /* alagard.ttf */,
+				AFE882372A609DA7009DF268 /* pauseButtonBackground.png */,
 				AFE8820E2A607F86009DF268 /* MenuSettingsAssets */,
 				AF40FDFF2A5DE0040015D7A8 /* MenuPauseAssets */,
 				AF40FDDF2A5DC6920015D7A8 /* Assets.xcassets */,
@@ -258,6 +261,7 @@
 				AFE8821B2A60823A009DF268 /* joystickButtonBackground.png in Resources */,
 				AFE8822C2A608360009DF268 /* resumeButtonBackground.png in Resources */,
 				AFE8821C2A60823A009DF268 /* checkButtonBackground.png in Resources */,
+				AFE882382A609DA7009DF268 /* pauseButtonBackground.png in Resources */,
 				AFE882362A608923009DF268 /* MenuSettingsLanguage.sks in Resources */,
 				AFE8822D2A608360009DF268 /* restartButtonBackground.png in Resources */,
 				AF40FDDE2A5DC6910015D7A8 /* Main.storyboard in Resources */,
