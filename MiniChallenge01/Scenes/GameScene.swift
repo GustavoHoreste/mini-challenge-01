@@ -12,9 +12,9 @@ import SwiftUI
 let screenSize = UIScreen.main.bounds.size
 let screenWidth = screenSize.width
 let screenHeight = screenSize.height
-//let menuBackground:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "backgroundMenuPause"), size: CGSize(width: 800, height: screenHeight * 0.55))
-//let menuSettingsBackground:SKSpriteNode = SKSpriteNode(color: .systemGray3, size: CGSize(width: 250, height: 500))
-//var menuAberto:Bool? = false
+let menuBackground:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "backgroundMenuPause"), size: CGSize(width: 84.42 / 100.0 * screenWidth, height: 55.4 / 100.0 * screenHeight))
+let menuSettingsBackground:SKSpriteNode = SKSpriteNode(color: .systemGray3, size: CGSize(width: 250, height: 500))
+var menuAberto:Bool? = false
 
 //MARK: CÓDIGO ARTHUR...
 
@@ -32,15 +32,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let personagem:SKSpriteNode = SKSpriteNode(imageNamed: "Cavaleiro") // Personagem
     var contadorPulo:Int = 0 // contador de pulo duplo
     
-    let menuBackground:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "backgroundMenuPause"))
-    
-    let menuSettingsBackground:SKSpriteNode = SKSpriteNode(color: .systemGray3, size: CGSize(width: 250, height: 500))
-    var menuAberto:Bool? = false
-    
     //MARK: DidMove
     override func didMove(to view: SKView) {
         
-        menuBackground.size = CGSize(width: self.frame.width, height: self.frame.height)
         //MARK: Propriedades da view
         self.physicsBody =  SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsWorld.contactDelegate = self
@@ -48,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let spriteBtnPause = SKSpriteNode(texture: SKTexture(imageNamed: "pauseButtonBackground"))
         let btnPause:SKButtonNode = SKButtonNode(image: spriteBtnPause, label: SKLabelNode(text: ""), action: {
             if(menuAberto == false) {
-                openMenu(in: self, menuBackground:menuBackground )
+                openMenu(in: self)
                 
                 menuAberto = true
             } else {
@@ -69,13 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: TouchesBegan
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        print("toque")
-//        let toque = touches.first
-//        let location = toque?.location(in: self)
-//        if let node = self.nodes(at: <#T##CGPoint#>){
-//            print(node.name)
-//        }
-//        
+
         
         //MARK: Verifica se os botoes foram pressionados e movimento o personagem
         for touch in touches {
@@ -85,6 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
             for node in touchedNodes{
                 
+  
                 
                 if node.name == "Esquerdo" {
                     toqueEsquerdoAtivo = true
