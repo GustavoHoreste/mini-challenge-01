@@ -9,7 +9,14 @@ import UIKit
 import SpriteKit
 import SwiftUI
 
-let menuBackground:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "backgroundMenuPause"), size: CGSize(width: 615, height: 879))
+let screenSize = UIScreen.main.bounds.size
+
+let screenWidth = screenSize.width
+let screenHeight = screenSize.height
+
+
+let menuBackground:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "backgroundMenuPause"), size: CGSize(width: 84.42 / 100.0 * screenWidth, height: 55.4 / 100.0 * screenHeight))
+
 
 let menuSettingsBackground:SKSpriteNode = SKSpriteNode(color: .systemGray3, size: CGSize(width: 250, height: 500))
 
@@ -26,6 +33,9 @@ class GameScene: SKScene {
                 self.openMenu()
                 
                 menuAberto = true
+            } else {
+                self.closeMenu()
+                menuAberto = false
             }
         })
         
@@ -37,6 +47,8 @@ class GameScene: SKScene {
     }
     
     func openMenu() {
+//        menuBackground.anchorPoint = CGPoint(x: 0, y: 0)
+
         if(menuBackground.children.count > 0) {
             self.addChild(menuBackground)
         } else {
@@ -44,40 +56,58 @@ class GameScene: SKScene {
             menuBackground.zPosition = -1
             self.addChild(menuBackground)
             
-            let spriteBtnPlay:SKSpriteNode = SKSpriteNode(color: .systemGreen, size: CGSize(width: 200, height: 70))
+//            let menuBackground = SKSpriteNode(texture: SKTexture(imageNamed: "backgroundMenuPause"), size: CGSize(width: 615, height: 879))
+
+            let menuSize = menuBackground.size
+
+            let menuWidth = menuSize.width
+            let menuHeight = menuSize.height
+            
+            print("\n\nmenu:")
+            print(menuSize)
+            print(menuWidth)
+            print(menuHeight)
+            
+            //CGSize(width: 84.42 / 100.0 * screenWidth, height: 55.4 / 100.0 * screenHeight))
+
+            let spriteBtnPlay:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "resumeButtonBackground"), size: CGSize(width: 41.05 / 100.0 * menuWidth, height: 14.67 / 100.0 * menuHeight))
             let btnPlay:SKButtonNode = SKButtonNode(image: spriteBtnPlay, label: SKLabelNode(text: "Play"), action: {
                 print("play")
+                self.closeMenu()
             })
-            btnPlay.position = CGPoint(x: 0, y: 140)
+            
+//            var calculo = ((((100 * 100) / (menuHeight / 2)) / 100) / 2)
+//            print(calculo)
+            btnPlay.position = CGPoint(x: menuWidth * ((((0 * 100) / (menuWidth / 2)) / 100) / 2), y: menuHeight * ((((100 * 100) / (menuHeight / 2)) / 100) / 2))
             menuBackground.addChild(btnPlay)
             
-            let spriteBtnRepeat:SKSpriteNode = SKSpriteNode(color: .systemBlue, size: CGSize(width: 200, height: 70))
-            let btnRepeat:SKButtonNode = SKButtonNode(image: spriteBtnRepeat, label: SKLabelNode(text: "Repeat"), action: {
+            let spriteBtnRepeat:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "restartButtonBackground"), size: CGSize(width: 41.05 / 100.0 * menuWidth, height: 14.67 / 100.0 * menuHeight))
+            let btnRepeat:SKButtonNode = SKButtonNode(image: spriteBtnRepeat, label: SKLabelNode(text: "ue"), action: {
                 print("repeat")
             })
-            btnRepeat.position = CGPoint(x: 0, y: 50)
+            btnRepeat.position = CGPoint(x: menuWidth * ((((0 * 100) / (menuWidth / 2)) / 100) / 2), y: menuHeight * ((((16 * 100) / (menuHeight / 2)) / 100) / 2))
             menuBackground.addChild(btnRepeat)
             
-            let spriteBtnSettings:SKSpriteNode = SKSpriteNode(color: .systemGray, size: CGSize(width: 200, height: 70))
+            let spriteBtnSettings:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "settingsButtonBackground"), size: CGSize(width: 41.05 / 100.0 * menuWidth, height: 14.67 / 100.0 * menuHeight))
             let btnSettings:SKButtonNode = SKButtonNode(image: spriteBtnSettings, label: SKLabelNode(text: "Settings"), action: {
                 self.openMenuSettings()
             })
-            btnSettings.position = CGPoint(x: 0, y: -40)
+            btnSettings.position = CGPoint(x: menuWidth * ((((0 * 100) / (menuWidth / 2)) / 100) / 2), y: menuHeight * ((((-65 * 100) / (menuHeight / 2)) / 100) / 2))
             menuBackground.addChild(btnSettings)
             
-            let spriteBtnExit:SKSpriteNode = SKSpriteNode(color: .systemPink, size: CGSize(width: 200, height: 70))
+            let spriteBtnExit:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: "exitButtonBackground"), size: CGSize(width: 41.05 / 100.0 * menuWidth, height: 14.67 / 100.0 * menuHeight))
             let btnExit:SKButtonNode = SKButtonNode(image: spriteBtnExit, label: SKLabelNode(text: "Exit"), action: {
                 print("exit")
             })
-            btnExit.position = CGPoint(x: 0, y: -130)
+            btnExit.position = CGPoint(x: menuWidth * ((((0 * 100) / (menuWidth / 2)) / 100) / 2), y: menuHeight * ((((-148 * 100) / (menuHeight / 2)) / 100) / 2))
             menuBackground.addChild(btnExit)
-            
-            let spriteBtnSairMenu:SKSpriteNode = SKSpriteNode(color: .systemMint, size: CGSize(width: 30, height: 30))
-            let btnSairMenu:SKButtonNode = SKButtonNode(image: spriteBtnSairMenu, label: SKLabelNode(text: ""), action: {
-                self.closeMenu()
-            })
-            btnSairMenu.position = CGPoint(x: 100, y: 170)
-            menuBackground.addChild(btnSairMenu)
+//
+//            let spriteBtnSairMenu:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: ""), size: CGSize(width: 149, height: 76))
+//            let btnSairMenu:SKButtonNode = SKButtonNode(image: spriteBtnSairMenu, label: SKLabelNode(text: ""), action: {
+//                self.closeMenu()
+//            })
+//            btnSairMenu.position = CGPoint(x: 100, y: 170)
+//            menuBackground.addChild(btnSairMenu)
         }
     }
     
@@ -89,39 +119,43 @@ class GameScene: SKScene {
     }
     
     func openMenuSettings() {
-  
-        menuSettingsBackground.position = CGPoint(x: frame.midX, y: frame.midY)
+
+
+        menuSettingsBackground.position = CGPoint(x: size.width / 2, y: size.height / 2)
         menuSettingsBackground.zPosition = -1
         self.addChild(menuSettingsBackground)
 
-        let spriteBtnMusica = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        //CGSize(width: 84.42 / 100.0 * screenWidth, height: 55.4 / 100.0 * screenHeight))
+        
+
+        let spriteBtnMusica = SKSpriteNode(color: .systemPurple, size: CGSize(width: 41.05 / 100.0 * screenWidth, height: 14.67 / 100.0 * screenHeight))
         let btnMusica = SKButtonNode(image: spriteBtnMusica, label: SKLabelNode(text: "Música")) {
             print("musica")
         }
         btnMusica.position = CGPoint(x: 0, y: 180)
         menuSettingsBackground.addChild(btnMusica)
 
-        let spriteBtnSom = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let spriteBtnSom = SKSpriteNode(color: .systemPurple, size: CGSize(width: 41.05 / 100.0 * screenWidth, height: 14.67 / 100.0 * screenHeight))
         let btnSom = SKButtonNode(image: spriteBtnSom, label: SKLabelNode(text: "Som")) {
             print("som")
         }
         btnSom.position = CGPoint(x: 0, y: 90)
         menuSettingsBackground.addChild(btnSom)
 
-        let spriteBtnJoystick = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let spriteBtnJoystick = SKSpriteNode(color: .systemPurple, size: CGSize(width: 41.05 / 100.0 * screenWidth, height: 14.67 / 100.0 * screenHeight))
         let btnJoystick = SKButtonNode(image: spriteBtnJoystick, label: SKLabelNode(text: "Joystick")) {
             print("Joystick")
         }
         menuSettingsBackground.addChild(btnJoystick)
 
-        let spriteBtnIdioma = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let spriteBtnIdioma = SKSpriteNode(color: .systemPurple, size: CGSize(width: 41.05 / 100.0 * screenWidth, height: 14.67 / 100.0 * screenHeight))
         let btnIdioma = SKButtonNode(image: spriteBtnIdioma, label: SKLabelNode(text: "Idioma")) {
             print("idioma")
         }
         btnIdioma.position = CGPoint(x: 0, y: -90)
         menuSettingsBackground.addChild(btnIdioma)
 
-        let spriteBtnSobre = SKSpriteNode(color: .systemPurple, size: CGSize(width: 200, height: 70))
+        let spriteBtnSobre = SKSpriteNode(color: .systemPurple, size: CGSize(width: 41.05 / 100.0 * screenWidth, height: 14.67 / 100.0 * screenHeight))
         let btnSobre = SKButtonNode(image: spriteBtnSobre, label: SKLabelNode(text: "Sobre")) {
             print("sobre")
         }
@@ -129,52 +163,3 @@ class GameScene: SKScene {
         menuSettingsBackground.addChild(btnSobre)
     }
 }
-
-/* MARK: MenuPause com sprites prontos
- let backgroundMenu:SKSpriteNode = SKSpriteNode(imageNamed: "menuPauseBackground")
- backgroundMenu.zPosition = -1
- backgroundMenu.position = CGPoint(x: frame.midX, y: frame.midY)
- backgroundMenu.setScale(3.0)
- self.addChild(backgroundMenu)
- 
- let labelButtonPlay:SKLabelNode = SKLabelNode(text: "Play")
- labelButtonPlay.fontName = "alagard"
- labelButtonPlay.fontSize = labelButtonPlay.fontSize * 0.2
-
- let buttonPlay:SKButtonNode = SKButtonNode(image: SKSpriteNode(imageNamed: "playButtonBackground"), label: labelButtonPlay, action: { print("play!") })
- buttonPlay.position = CGPoint(x: frame.midX, y: frame.midY)
- self.addChild(buttonPlay)
- 
- 
- let labelButtonRepeat:SKLabelNode = SKLabelNode(fontNamed: "Alagard")
- labelButtonRepeat.text = "testeeeeee"
- labelButtonRepeat.zPosition = 100
- labelButtonRepeat.fontSize = labelButtonRepeat.fontSize * 0.2
-
- let buttonRepeat:SKButtonNode = SKButtonNode(image: SKSpriteNode(imageNamed: "repeatButtonBackground"), label: labelButtonRepeat, action: { print("replay!") })
- buttonRepeat.position = CGPoint(x: frame.midX, y: frame.midY - 30)
- self.addChild(buttonRepeat)
- 
- 
- let labelButtonSettings:SKLabelNode = SKLabelNode(text: "Settings")
- labelButtonSettings.fontName = "alagard"
- labelButtonSettings.fontSize = labelButtonPlay.fontSize * 0.2
-
- let buttonSettings:SKButtonNode = SKButtonNode(image: SKSpriteNode(imageNamed: "settingsButtonBackground"), label: labelButtonSettings, action: { print("settings!") })
- buttonSettings.position = CGPoint(x: frame.midX, y: frame.midY - 60)
- self.addChild(buttonSettings)
- 
- let labelButtonExit:SKLabelNode = SKLabelNode(text: "Exit")
- labelButtonExit.fontName = "alagard"
- labelButtonExit.fontSize = labelButtonExit.fontSize * 0.2
-
- let buttonExit:SKButtonNode = SKButtonNode(image: SKSpriteNode(imageNamed: "exitButtonBackground"), label: labelButtonExit, action: { print("exit!") })
- buttonExit.position = CGPoint(x: frame.midX, y: frame.midY - 90)
- self.addChild(buttonExit)
- 
- let node = SKSpriteNode(color: .red, size: CGSize(width: 50, height: 50))
- self.addChild(node)
- node.position = CGPoint(x: 0, y: view.bounds.size.height/2)
- */
-
-
