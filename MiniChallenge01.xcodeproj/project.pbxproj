@@ -25,7 +25,7 @@
 		AFE8821E2A60823A009DF268 /* backgroundPequeno.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882132A608239009DF268 /* backgroundPequeno.png */; };
 		AFE8821F2A60823A009DF268 /* musicButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882142A60823A009DF268 /* musicButtonBackground.png */; };
 		AFE882202A60823A009DF268 /* musicMuteButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882152A60823A009DF268 /* musicMuteButtonBackground.png */; };
-		AFE882212A60823A009DF268 /* settingsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882162A60823A009DF268 /* settingsBackground.png */; };
+		AFE882212A60823A009DF268 /* settingsMenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882162A60823A009DF268 /* settingsMenuBackground.png */; };
 		AFE882222A60823A009DF268 /* soundButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882172A60823A009DF268 /* soundButtonBackground.png */; };
 		AFE882232A60823A009DF268 /* soundMuteButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882182A60823A009DF268 /* soundMuteButtonBackground.png */; };
 		AFE882242A60823A009DF268 /* aboutButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882192A60823A009DF268 /* aboutButtonBackground.png */; };
@@ -63,7 +63,7 @@
 		AFE882132A608239009DF268 /* backgroundPequeno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPequeno.png; sourceTree = "<group>"; };
 		AFE882142A60823A009DF268 /* musicButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicButtonBackground.png; sourceTree = "<group>"; };
 		AFE882152A60823A009DF268 /* musicMuteButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicMuteButtonBackground.png; sourceTree = "<group>"; };
-		AFE882162A60823A009DF268 /* settingsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsBackground.png; sourceTree = "<group>"; };
+		AFE882162A60823A009DF268 /* settingsMenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsMenuBackground.png; sourceTree = "<group>"; };
 		AFE882172A60823A009DF268 /* soundButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundButtonBackground.png; sourceTree = "<group>"; };
 		AFE882182A60823A009DF268 /* soundMuteButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soundMuteButtonBackground.png; sourceTree = "<group>"; };
 		AFE882192A60823A009DF268 /* aboutButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutButtonBackground.png; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				AFE882122A608239009DF268 /* languageButtonBackground.png */,
 				AFE882142A60823A009DF268 /* musicButtonBackground.png */,
 				AFE882152A60823A009DF268 /* musicMuteButtonBackground.png */,
-				AFE882162A60823A009DF268 /* settingsBackground.png */,
+				AFE882162A60823A009DF268 /* settingsMenuBackground.png */,
 				AFE882172A60823A009DF268 /* soundButtonBackground.png */,
 				AFE882182A60823A009DF268 /* soundMuteButtonBackground.png */,
 			);
@@ -257,7 +257,7 @@
 				AF7CA02E2A6073D700AFCCC1 /* botao_pause_x2.png in Resources */,
 				AFE8822E2A608360009DF268 /* settingsButtonBackground.png in Resources */,
 				AFE882322A6086F7009DF268 /* MenuPause.sks in Resources */,
-				AFE882212A60823A009DF268 /* settingsBackground.png in Resources */,
+				AFE882212A60823A009DF268 /* settingsMenuBackground.png in Resources */,
 				AFE8821B2A60823A009DF268 /* joystickButtonBackground.png in Resources */,
 				AFE8822C2A608360009DF268 /* resumeButtonBackground.png in Resources */,
 				AFE8821C2A60823A009DF268 /* checkButtonBackground.png in Resources */,
