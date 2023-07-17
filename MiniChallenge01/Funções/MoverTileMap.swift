@@ -11,16 +11,12 @@ import SpriteKit
 
 //MARK: Mover tile map - Arthur
 
-func moveTileMap(_ map: SKTileMapNode, in scene:GameScene) {
-
-    let tileSize =  CGSize(width: map.numberOfColumns, height: map.numberOfRows)
-
-    let moveAction = SKAction.moveBy(x: 0, y: -scene.frame.height, duration: 5)
-    let resetAction = SKAction.moveBy(x: -0, y: scene.frame.height, duration: 0.0)
-    let removeAction = SKAction.removeFromParent()
+func moveTileMap(_ map: SKTileMapNode) -> CGFloat {
+    let moveDuration = TimeInterval(map.mapSize.height / (100 * map.xScale))
+    let moveAction = SKAction.moveBy(x: 0, y: -map.mapSize.height, duration: moveDuration)
     let sequenceAction = SKAction.sequence([moveAction])
     let repeatAction = SKAction.repeatForever(sequenceAction)
-
+        
     map.run(repeatAction)
-    
+    return map.mapSize.height / CGFloat(moveDuration)
 }
