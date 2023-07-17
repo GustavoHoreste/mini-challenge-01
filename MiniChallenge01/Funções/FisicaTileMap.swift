@@ -16,8 +16,8 @@ func createTileMapColliders(_ tilemap: SKTileMapNode) {
     let tileSize = tilemap.tileSize
     
     // Defina a escala dos objetos com base na relação entre o tamanho do tile e o tamanho desejado dos objetos
-    let scaleX: CGFloat = 0.2
-    let scaleY: CGFloat = 0.2
+    let scaleX: CGFloat = 1
+    let scaleY: CGFloat = 1
     
     for row in 0..<tilemap.numberOfRows {
         for column in 0..<tilemap.numberOfColumns {

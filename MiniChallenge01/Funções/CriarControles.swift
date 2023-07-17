@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 
 //MARK: Função para posicionar os controles - Arthur
-func criarControles(in scene:GameScene){
+func criarControles(in scene: GameScene) -> (SKSpriteNode, SKSpriteNode, SKSpriteNode)  {
     
     let controleDireito:SKSpriteNode = SKSpriteNode()
     let controleEsquerdo:SKSpriteNode = SKSpriteNode()
@@ -35,4 +35,6 @@ func criarControles(in scene:GameScene){
     controlePular.color = .black
     controlePular.name = "Pular"
     scene.addChild(controlePular)
+    
+    return (controleEsquerdo, controleDireito, controlePular)
 }

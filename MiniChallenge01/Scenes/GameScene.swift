@@ -19,9 +19,17 @@ var menuAberto:Bool? = false
 //MARK: CÓDIGO ARTHUR...
 
 
-
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    var setasVisiveis = false
+//    var controleDireito:SKSpriteNode = SKSpriteNode()
+//    var controleEsquerdo:SKSpriteNode = SKSpriteNode()
+//    var controlePular:SKSpriteNode = SKSpriteNode()
+    var velocidadeX = 0.0
     
+
+    let personagem:SKSpriteNode = SKSpriteNode(imageNamed: "Cavaleiro")
+    var contadorPulo:Int = 0
+
     var apertou:Bool = false // Verificar se o usuario apertou na tela
     let texto: SKLabelNode = SKLabelNode() // Texto na tela
     
@@ -37,14 +45,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var toqueDireitoAtivo:Bool = false // Verificar o toque no botao direito
 
     
-    let personagem:SKSpriteNode = SKSpriteNode(imageNamed: "Cavaleiro") // Personagem
-    var contadorPulo:Int = 0 // contador de pulo duplo
+
     
+    var estaEmUsoJoy = false
+    var controlToggle: SKLabelNode!
+    var joystickBase: SKShapeNode = SKShapeNode()
+    var joystickKnob: SKShapeNode  = SKShapeNode()
+    var controleEsquerdo: SKSpriteNode!
+    var controleDireito: SKSpriteNode!
+    var controlePular: SKSpriteNode!
+    
+    var joystickDirection: CGVector = .zero
+
+
     //MARK: DidMove
     override func didMove(to view: SKView) {
-        
-        
-        
         mapa1 = self.childNode(withName: "Mapa1") as? SKTileMapNode
         mapa2 = self.childNode(withName: "Mapa2") as? SKTileMapNode
         mapa3 = self.childNode(withName: "Mapa3") as? SKTileMapNode
@@ -82,76 +97,155 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         })
         btnPause.position = CGPoint(x: frame.maxX - 70, y: frame.maxY - 70)
         self.addChild(btnPause)
-        
-        
-        //MARK: Texto na tela
         gerarTexto(in: self, texto: texto)
         
         
+    //MARK: GUSTAVO
+        
+
+        self.view?.isMultipleTouchEnabled = true
+        controlToggle = SKLabelNode(text: "Controles: Setas")
+        controlToggle.position = CGPoint(x: frame.minX + 100, y: frame.maxY - 100)
+        controlToggle.fontSize = 20
+        controlToggle.fontColor = .white
+        addChild(controlToggle)
+        
         
     }
+    
+    func alternarControles() {
+        setasVisiveis.toggle()
+        
+        print(" esse e o estado de setasVisieis: \(setasVisiveis)")
+        if setasVisiveis {
+            mostrarControlesSetas()
+        } else {
+            mostrarControleJoystick()
+        }
+    }
+
+    func mostrarControlesSetas() {
+        (controleEsquerdo, controleDireito, controlePular) = criarControles(in: self)
+       
+            print("estou nas setas")
+            joystickBase.removeFromParent()
+            joystickKnob.removeFromParent()
+        
+    }
+    
+    func mostrarControleJoystick() {
+            estaEmUsoJoy = true
+            controleDireito.removeFromParent()
+            controleEsquerdo.removeFromParent()
+            criarControlesJoy()
+        }
+
+
+    
+    func criarControlesJoy() {
+        joystickBase = SKShapeNode(rectOf: CGSize(width: 200, height: 100), cornerRadius: 20)
+        joystickBase.fillColor = .gray
+        joystickBase.strokeColor = .clear
+        joystickBase.position = CGPoint(x: self.frame.midX - 200, y: -400)
+        joystickBase.zPosition = 100
+        joystickBase.alpha = 0.5
+        addChild(joystickBase)
+
+
+        let joystickKnobRadius: CGFloat = 30
+        joystickKnob = SKShapeNode(circleOfRadius: joystickKnobRadius)
+        joystickKnob.fillColor = .gray
+        joystickKnob.strokeColor = .clear
+        joystickKnob.position = joystickBase.position
+        joystickKnob.zPosition = joystickBase.zPosition + 1
+        joystickKnob.alpha = 0.8
+        addChild(joystickKnob)
+    }
+
+
     
     //MARK: TouchesBegan
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        
-        if(!apertou){
-            
+        if !apertou {
             apertou = true
             texto.isHidden = true
             criarPersonagem(in: self, personagem)
-            criarControles(in: self)
+            alternarControles()
         }
-        
-        
-        //MARK: Verifica se os botoes foram pressionados e movimento o personagem
+
         for touch in touches {
-            
             let touchLocation = touch.location(in: self)
             let touchedNodes = nodes(at: touchLocation)
-                
-            for node in touchedNodes{
-                                
-                if node.name == "Esquerdo" {
+
+            for node in touchedNodes {
+                if node == controlToggle {
+                    alternarControles()
+                } else if node == joystickBase {
+                    estaEmUsoJoy.toggle()
+                } else if node.name == "Esquerdo" {
                     toqueEsquerdoAtivo = true
-                    print("Apertou")
-
-                    //quadrado.physicsBody?.velocity = CGVector.zero
                     personagem.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
-                }
-                if node.name == "Direito"{
+                } else if node.name == "Direito" {
                     toqueDireitoAtivo = true
-                    print("Apertou")
-
-                   // quadrado.physicsBody?.velocity = CGVector.zero
                     personagem.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
-                }
-                if node.name == "Pular"{
-                        if(contadorPulo < 2){
-                            print("Apertou")
+                } else if node.name == "Pular" {
+                    if contadorPulo < 2 {
                         contadorPulo += 1
                         personagem.physicsBody?.applyImpulse(CGVector(dx: 0, dy: personagem.size.height))
-                            if((personagem.physicsBody?.velocity.dy)! > 100){
-                                personagem.physicsBody?.velocity.dy = .zero
-                                personagem.physicsBody?.velocity.dy = 500
-                            }
+                        if personagem.physicsBody?.velocity.dy ?? 0 > 100 {
+                            personagem.physicsBody?.velocity.dy = 500
+                        }
                     }
                 }
-                
             }
         }
     }
+
     
+
+    func funcaoQueCalculaDistanciaJoyStick(toque: UITouch) {
+        let localicao = toque.location(in: self)
+        
+        if estaEmUsoJoy {
+            let distanciaX = localicao.x - joystickBase.position.x
+            
+            let maxDistanceX = joystickBase.frame.width / 2
+            
+            if abs(distanciaX) <= maxDistanceX {
+                joystickKnob.position.x = localicao.x
+            } else {
+                let directionX = distanciaX < 0 ? -1.0 : 1.0
+                joystickKnob.position.x = joystickBase.position.x + directionX * maxDistanceX
+            }
+            
+            velocidadeX = (joystickKnob.position.x - joystickBase.position.x) / 10
+        }
+    }
+
+
+    func moverDeVolta() {
+        estaEmUsoJoy.toggle()
+        velocidadeX = 0.0
+        let moverVoltar = SKAction.move(to: CGPoint(x: joystickBase.position.x, y: joystickBase.position.y), duration: 0.1)
+        moverVoltar.timingMode = .linear
+        joystickKnob.run(moverVoltar)
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for toque in touches {
+            self.funcaoQueCalculaDistanciaJoyStick(toque: toque)
+        }
+    }
+
     
-    
+
     //MARK: TouchesEnded
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        
-        
+
         //MARK: Verificar se o botão foi despressionado para que o personagem pare de andar
         for touch in touches {
             let touchLocation = touch.location(in: self)
+            
             
             if let touchedNode = self.nodes(at: touchLocation).first as? SKSpriteNode {
                 if touchedNode.name == "Direito" {
@@ -164,23 +258,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if((personagem.physicsBody?.velocity.dy)! == 0.0){
                         personagem.physicsBody?.velocity = CGVector.zero
                     }
+                }else if joystickBase.contains(touchedNode){
+                    moverDeVolta()
+                    
                 }
             }
         }
         
-        
     }
-    
     
     //MARK: DidBegin
     func didBegin(_ contact: SKPhysicsContact) {
-        
-        
         if(contact.bodyA.node?.name == "Chao"){
             contadorPulo = 0
             onMovingPlatform = true
             personagem.physicsBody?.velocity.dy = 0.0
-            
         }
     }
     
@@ -191,8 +283,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    
-    //MARK: Update
+
     override func update(_ currentTime: TimeInterval) {
         
         if onMovingPlatform {
@@ -203,6 +294,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         resetMapPosition(mapa1: mapa1, mapa2: mapa2, mapHeight: mapHeight)
         
         //MARK: fazer o personagem andar pressionando o botao.
+        if estaEmUsoJoy{
+            self.personagem.position.x += velocidadeX
+        }
         if(toqueDireitoAtivo){
             personagem.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
             if((personagem.physicsBody?.velocity.dx)! > 10 ){
@@ -215,36 +309,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 personagem.physicsBody?.velocity.dx = -220
             }
         }
-        
-        
     }
-    
-    
-    
 }
 
 
-//MARK: Função para o preview do SwiftUI - Arthur
-struct MyView: UIViewControllerRepresentable{
-    typealias UIViewControllerType = ViewController
+
     
-    func makeUIViewController(context: Context) -> ViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard
-            let viewController = storyboard.instantiateInitialViewController()
-        else{
-            fatalError("Cannot load ViewController from main storyboard")
-        }
-        return viewController as! ViewController
-    }
     
-    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
-        // Updates the state of the specified view controller with new information from SwiftUI.
-    }
-}
-struct ControllerView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyView()
-            .ignoresSafeArea()
-    }
-}
+    
+
+

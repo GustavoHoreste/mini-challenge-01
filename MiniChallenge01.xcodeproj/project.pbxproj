@@ -11,11 +11,8 @@
 		3B46AEBA2A61CABD004A4315 /* MoverTileMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEB92A61CABD004A4315 /* MoverTileMap.swift */; };
 		3B46AEBC2A61CB12004A4315 /* CriarControles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEBB2A61CB12004A4315 /* CriarControles.swift */; };
 		3B46AEBE2A61CC3F004A4315 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEBD2A61CC3F004A4315 /* Menu.swift */; };
-		3B46AEC02A61CCFE004A4315 /* FecharMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEBF2A61CCFE004A4315 /* FecharMenu.swift */; };
-		3B46AEC22A61CDC0004A4315 /* AbrirMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEC12A61CDC0004A4315 /* AbrirMenu.swift */; };
 		3B46AEC42A61D6D4004A4315 /* CriarPersonagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEC32A61D6D4004A4315 /* CriarPersonagem.swift */; };
 		3B46AEC62A61D7D5004A4315 /* Cavaleiro.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B46AEC52A61D7D5004A4315 /* Cavaleiro.png */; };
-		3B46AEC82A61DBE9004A4315 /* TileMap.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3B46AEC72A61DBE9004A4315 /* TileMap.sks */; };
 		3B46AECE2A64A2A9004A4315 /* BitMaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AECD2A64A2A9004A4315 /* BitMaks.swift */; };
 		3B46AED02A64A2D9004A4315 /* ResetTileMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AECF2A64A2D9004A4315 /* ResetTileMap.swift */; };
 		3B46AED32A64A68E004A4315 /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3B46AED12A64A68E004A4315 /* MyTileSet.sks */; };
@@ -24,7 +21,6 @@
 		3B46AEE72A65AE4F004A4315 /* AbrirMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEE62A65AE4F004A4315 /* AbrirMenu.swift */; };
 		AF40FDD32A5DC6910015D7A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FDD22A5DC6910015D7A8 /* AppDelegate.swift */; };
 		AF40FDDE2A5DC6910015D7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDDC2A5DC6910015D7A8 /* Main.storyboard */; };
-		AF40FDE02A5DC6920015D7A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDDF2A5DC6920015D7A8 /* Assets.xcassets */; };
 		AF40FDE32A5DC6920015D7A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDE12A5DC6920015D7A8 /* LaunchScreen.storyboard */; };
 		AF40FDEA2A5DC6D10015D7A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FDE92A5DC6D10015D7A8 /* ViewController.swift */; };
 		AF40FDEE2A5DC75A0015D7A8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FDED2A5DC75A0015D7A8 /* GameScene.swift */; };
@@ -54,6 +50,11 @@
 		AFE882342A6088BD009DF268 /* MenuSettingsJoystick.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */; };
 		AFE882362A608923009DF268 /* MenuSettingsLanguage.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */; };
 		AFE882382A609DA7009DF268 /* pauseButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE882372A609DA7009DF268 /* pauseButtonBackground.png */; };
+		D999E9C32A65BFBB003DA691 /* AbrirMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D999E9C22A65BFBB003DA691 /* AbrirMenu.swift */; };
+		D999E9C52A65C11A003DA691 /* FecharMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D999E9C42A65C11A003DA691 /* FecharMenu.swift */; };
+		D999E9C72A65C676003DA691 /* TileMap.sks in Resources */ = {isa = PBXBuildFile; fileRef = D999E9C62A65C676003DA691 /* TileMap.sks */; };
+		D999E9C92A65C75D003DA691 /* TileSetPrincipal.sks in Resources */ = {isa = PBXBuildFile; fileRef = D999E9C82A65C75D003DA691 /* TileSetPrincipal.sks */; };
+		D999E9CB2A65C7D4003DA691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D999E9CA2A65C7D4003DA691 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,11 +62,8 @@
 		3B46AEB92A61CABD004A4315 /* MoverTileMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoverTileMap.swift; sourceTree = "<group>"; };
 		3B46AEBB2A61CB12004A4315 /* CriarControles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarControles.swift; sourceTree = "<group>"; };
 		3B46AEBD2A61CC3F004A4315 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		3B46AEBF2A61CCFE004A4315 /* FecharMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FecharMenu.swift; sourceTree = "<group>"; };
-		3B46AEC12A61CDC0004A4315 /* AbrirMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbrirMenu.swift; sourceTree = "<group>"; };
 		3B46AEC32A61D6D4004A4315 /* CriarPersonagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarPersonagem.swift; sourceTree = "<group>"; };
 		3B46AEC52A61D7D5004A4315 /* Cavaleiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cavaleiro.png; sourceTree = "<group>"; };
-		3B46AEC72A61DBE9004A4315 /* TileMap.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = TileMap.sks; path = "../../../challenge_mini1/Teste Controles e fisica/Teste Controles e fisica/TileMap.sks"; sourceTree = "<group>"; };
 		3B46AECD2A64A2A9004A4315 /* BitMaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMaks.swift; sourceTree = "<group>"; };
 		3B46AECF2A64A2D9004A4315 /* ResetTileMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetTileMap.swift; sourceTree = "<group>"; };
 		3B46AED12A64A68E004A4315 /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
@@ -75,14 +73,11 @@
 		AF40FDCF2A5DC6910015D7A8 /* MiniChallenge01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40FDD22A5DC6910015D7A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40FDDD2A5DC6910015D7A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AF40FDDF2A5DC6920015D7A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF40FDE22A5DC6920015D7A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF40FDE92A5DC6D10015D7A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF40FDED2A5DC75A0015D7A8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		AF40FDF22A5DCCE50015D7A8 /* SKButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButtonNode.swift; sourceTree = "<group>"; };
 		AF40FE002A5DEADC0015D7A8 /* MenuPauseFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPauseFunc.swift; sourceTree = "<group>"; };
-		AF40FE022A5DF1740015D7A8 /* alagard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alagard.ttf; sourceTree = "<group>"; };
-		AF40FE032A5DF1890015D7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MeenuPause.sks; sourceTree = "<group>"; };
 		AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPause.swift; sourceTree = "<group>"; };
 		AF7CA02D2A6073D700AFCCC1 /* botao_pause_x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = botao_pause_x2.png; sourceTree = "<group>"; };
@@ -107,6 +102,11 @@
 		AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuSettingsJoystick.sks; sourceTree = "<group>"; };
 		AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuSettingsLanguage.sks; sourceTree = "<group>"; };
 		AFE882372A609DA7009DF268 /* pauseButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButtonBackground.png; sourceTree = "<group>"; };
+		D999E9C22A65BFBB003DA691 /* AbrirMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbrirMenu.swift; sourceTree = "<group>"; };
+		D999E9C42A65C11A003DA691 /* FecharMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FecharMenu.swift; sourceTree = "<group>"; };
+		D999E9C62A65C676003DA691 /* TileMap.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileMap.sks; sourceTree = "<group>"; };
+		D999E9C82A65C75D003DA691 /* TileSetPrincipal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSetPrincipal.sks; sourceTree = "<group>"; };
+		D999E9CA2A65C7D4003DA691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +128,9 @@
 				3B46AEB92A61CABD004A4315 /* MoverTileMap.swift */,
 				3B46AECF2A64A2D9004A4315 /* ResetTileMap.swift */,
 				3B46AEBD2A61CC3F004A4315 /* Menu.swift */,
-				3B46AEBF2A61CCFE004A4315 /* FecharMenu.swift */,
-				3B46AEC12A61CDC0004A4315 /* AbrirMenu.swift */,
+				D999E9C42A65C11A003DA691 /* FecharMenu.swift */,
 				3B46AEE62A65AE4F004A4315 /* AbrirMenu.swift */,
+				D999E9C22A65BFBB003DA691 /* AbrirMenu.swift */,
 				3B46AEC32A61D6D4004A4315 /* CriarPersonagem.swift */,
 				3B46AEE42A64C142004A4315 /* TextoTela.swift */,
 			);
@@ -158,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				3B46AEB62A61C8A0004A4315 /* Funções */,
-				AF40FE032A5DF1890015D7A8 /* Info.plist */,
 				AF40FDEF2A5DC9D50015D7A8 /* Scenes */,
 				AF40FDF42A5DCCF10015D7A8 /* Components */,
 				AF40FDF02A5DC9F30015D7A8 /* Assets */,
@@ -171,11 +170,12 @@
 			isa = PBXGroup;
 			children = (
 				AF40FDED2A5DC75A0015D7A8 /* GameScene.swift */,
+				D999E9C62A65C676003DA691 /* TileMap.sks */,
 				AFE8822F2A6083AD009DF268 /* MenuSettings.sks */,
 				AFE882352A608923009DF268 /* MenuSettingsLanguage.sks */,
+				D999E9C82A65C75D003DA691 /* TileSetPrincipal.sks */,
 				AFE882312A6086F7009DF268 /* MenuPause.sks */,
 				AFE882332A6088BD009DF268 /* MenuSettingsJoystick.sks */,
-				3B46AEC72A61DBE9004A4315 /* TileMap.sks */,
 				3B46AED12A64A68E004A4315 /* MyTileSet.sks */,
 				3B46AED22A64A68E004A4315 /* Assets.xcassets */,
 			);
@@ -186,11 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				3B46AEC52A61D7D5004A4315 /* Cavaleiro.png */,
-				AF40FE022A5DF1740015D7A8 /* alagard.ttf */,
+				D999E9CA2A65C7D4003DA691 /* Assets.xcassets */,
 				AFE882372A609DA7009DF268 /* pauseButtonBackground.png */,
 				AFE8820E2A607F86009DF268 /* MenuSettingsAssets */,
 				AF40FDFF2A5DE0040015D7A8 /* MenuPauseAssets */,
-				AF40FDDF2A5DC6920015D7A8 /* Assets.xcassets */,
 				AF7CA0292A605B2B00AFCCC1 /* MeenuPause.sks */,
 				AF7CA02B2A605B7E00AFCCC1 /* MenuPause.swift */,
 			);
@@ -310,12 +309,12 @@
 				AFE882232A60823A009DF268 /* soundMuteButtonBackground.png in Resources */,
 				AF7CA02E2A6073D700AFCCC1 /* botao_pause_x2.png in Resources */,
 				AFE8822E2A608360009DF268 /* settingsButtonBackground.png in Resources */,
+				D999E9C92A65C75D003DA691 /* TileSetPrincipal.sks in Resources */,
 				AFE882322A6086F7009DF268 /* MenuPause.sks in Resources */,
 				3B46AED42A64A68E004A4315 /* Assets.xcassets in Resources */,
 				AFE882212A60823A009DF268 /* settingsBackground.png in Resources */,
 				AFE8821B2A60823A009DF268 /* joystickButtonBackground.png in Resources */,
 				3B46AEC62A61D7D5004A4315 /* Cavaleiro.png in Resources */,
-				3B46AEC82A61DBE9004A4315 /* TileMap.sks in Resources */,
 				AFE8822C2A608360009DF268 /* resumeButtonBackground.png in Resources */,
 				AFE8821C2A60823A009DF268 /* checkButtonBackground.png in Resources */,
 				AFE882382A609DA7009DF268 /* pauseButtonBackground.png in Resources */,
@@ -327,14 +326,15 @@
 				AFE882302A6083AD009DF268 /* MenuSettings.sks in Resources */,
 				AFE882342A6088BD009DF268 /* MenuSettingsJoystick.sks in Resources */,
 				AFE882242A60823A009DF268 /* aboutButtonBackground.png in Resources */,
+				D999E9C72A65C676003DA691 /* TileMap.sks in Resources */,
 				AFE8821F2A60823A009DF268 /* musicButtonBackground.png in Resources */,
 				AFE8821E2A60823A009DF268 /* backgroundPequeno.png in Resources */,
 				AFE8822B2A608360009DF268 /* exitButtonBackground.png in Resources */,
+				D999E9CB2A65C7D4003DA691 /* Assets.xcassets in Resources */,
 				AFE882222A60823A009DF268 /* soundButtonBackground.png in Resources */,
 				AF7CA02A2A605B2B00AFCCC1 /* MeenuPause.sks in Resources */,
 				AFE8821D2A60823A009DF268 /* languageButtonBackground.png in Resources */,
 				AFE8821A2A60823A009DF268 /* buttonBackground.png in Resources */,
-				AF40FDE02A5DC6920015D7A8 /* Assets.xcassets in Resources */,
 				3B46AED32A64A68E004A4315 /* MyTileSet.sks in Resources */,
 				AF40FDE32A5DC6920015D7A8 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -348,7 +348,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF40FDEE2A5DC75A0015D7A8 /* GameScene.swift in Sources */,
-				3B46AEC02A61CCFE004A4315 /* FecharMenu.swift in Sources */,
 				AF40FDF32A5DCCE50015D7A8 /* SKButtonNode.swift in Sources */,
 				3B46AEC42A61D6D4004A4315 /* CriarPersonagem.swift in Sources */,
 				3B46AEE52A64C142004A4315 /* TextoTela.swift in Sources */,
@@ -356,10 +355,11 @@
 				3B46AEBA2A61CABD004A4315 /* MoverTileMap.swift in Sources */,
 				3B46AEBE2A61CC3F004A4315 /* Menu.swift in Sources */,
 				3B46AEB82A61C8C1004A4315 /* FisicaTileMap.swift in Sources */,
-				3B46AEC22A61CDC0004A4315 /* AbrirMenu.swift in Sources */,
+				D999E9C52A65C11A003DA691 /* FecharMenu.swift in Sources */,
 				AF40FDEA2A5DC6D10015D7A8 /* ViewController.swift in Sources */,
 				AF40FE012A5DEADC0015D7A8 /* MenuPauseFunc.swift in Sources */,
 				3B46AEE72A65AE4F004A4315 /* AbrirMenu.swift in Sources */,
+				D999E9C32A65BFBB003DA691 /* AbrirMenu.swift in Sources */,
 				3B46AECE2A64A2A9004A4315 /* BitMaks.swift in Sources */,
 				AF40FDD32A5DC6910015D7A8 /* AppDelegate.swift in Sources */,
 				3B46AED02A64A2D9004A4315 /* ResetTileMap.swift in Sources */,
@@ -510,7 +510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T46F5AK653;
+				DEVELOPMENT_TEAM = 335BRL9A43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniChallenge01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -539,7 +539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T46F5AK653;
+				DEVELOPMENT_TEAM = 335BRL9A43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MiniChallenge01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
