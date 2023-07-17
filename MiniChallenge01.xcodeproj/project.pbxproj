@@ -21,6 +21,7 @@
 		3B46AED32A64A68E004A4315 /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3B46AED12A64A68E004A4315 /* MyTileSet.sks */; };
 		3B46AED42A64A68E004A4315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B46AED22A64A68E004A4315 /* Assets.xcassets */; };
 		3B46AEE52A64C142004A4315 /* TextoTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEE42A64C142004A4315 /* TextoTela.swift */; };
+		3B46AEE72A65AE4F004A4315 /* AbrirMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B46AEE62A65AE4F004A4315 /* AbrirMenu.swift */; };
 		AF40FDD32A5DC6910015D7A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40FDD22A5DC6910015D7A8 /* AppDelegate.swift */; };
 		AF40FDDE2A5DC6910015D7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDDC2A5DC6910015D7A8 /* Main.storyboard */; };
 		AF40FDE02A5DC6920015D7A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF40FDDF2A5DC6920015D7A8 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		3B46AED12A64A68E004A4315 /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
 		3B46AED22A64A68E004A4315 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B46AEE42A64C142004A4315 /* TextoTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextoTela.swift; sourceTree = "<group>"; };
+		3B46AEE62A65AE4F004A4315 /* AbrirMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbrirMenu.swift; sourceTree = "<group>"; };
 		AF40FDCF2A5DC6910015D7A8 /* MiniChallenge01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniChallenge01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40FDD22A5DC6910015D7A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40FDDD2A5DC6910015D7A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				3B46AEBD2A61CC3F004A4315 /* Menu.swift */,
 				3B46AEBF2A61CCFE004A4315 /* FecharMenu.swift */,
 				3B46AEC12A61CDC0004A4315 /* AbrirMenu.swift */,
+				3B46AEE62A65AE4F004A4315 /* AbrirMenu.swift */,
 				3B46AEC32A61D6D4004A4315 /* CriarPersonagem.swift */,
 				3B46AEE42A64C142004A4315 /* TextoTela.swift */,
 			);
@@ -356,6 +359,7 @@
 				3B46AEC22A61CDC0004A4315 /* AbrirMenu.swift in Sources */,
 				AF40FDEA2A5DC6D10015D7A8 /* ViewController.swift in Sources */,
 				AF40FE012A5DEADC0015D7A8 /* MenuPauseFunc.swift in Sources */,
+				3B46AEE72A65AE4F004A4315 /* AbrirMenu.swift in Sources */,
 				3B46AECE2A64A2A9004A4315 /* BitMaks.swift in Sources */,
 				AF40FDD32A5DC6910015D7A8 /* AppDelegate.swift in Sources */,
 				3B46AED02A64A2D9004A4315 /* ResetTileMap.swift in Sources */,
