@@ -18,13 +18,6 @@ var menuAberto:Bool? = false
 
 //MARK: CÓDIGO ARTHUR...
 
-var contadorPulo:Int = 0
-var apertou:Bool = false
-
-var toqueEsquerdoAtivo:Bool = false
-var toqueDireitoAtivo:Bool = false
-
-
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     var setasVisiveis = true
@@ -33,8 +26,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let controlePular:SKSpriteNode = SKSpriteNode()
     var velocidadeX = 0.0
     
+
     let personagem:SKSpriteNode = SKSpriteNode(imageNamed: "Cavaleiro")
     var contadorPulo:Int = 0
+
+    var apertou:Bool = false // Verificar se o usuario apertou na tela
+    let texto: SKLabelNode = SKLabelNode() // Texto na tela
+    
+    var tileMapVisual: SKTileMapNode!
+    var mapa1: SKTileMapNode!
+    var mapa2: SKTileMapNode!
+    var mapa3: SKTileMapNode!
+    var mapHeight: CGFloat!
+    var onMovingPlatform = false
+    var velocidadeDaPlataforma: CGFloat = 0.0
+    
+    var toqueEsquerdoAtivo:Bool = false // Verificar o toque do botao esquerdo
+    var toqueDireitoAtivo:Bool = false // Verificar o toque no botao direito
+
+    
+
     
     var estaEmUso = false
     var controlToggle: SKLabelNode!
@@ -48,10 +59,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: DidMove
     override func didMove(to view: SKView) {
         
+        
+        
+        mapa1 = self.childNode(withName: "Mapa1") as? SKTileMapNode
+        mapa2 = self.childNode(withName: "Mapa2") as? SKTileMapNode
+        mapa3 = self.childNode(withName: "Mapa3") as? SKTileMapNode
+        mapHeight = CGFloat(mapa1.mapSize.height)
+        
         //MARK: Propriedades da view
         self.physicsBody =  SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsWorld.contactDelegate = self
+        self.view?.isMultipleTouchEnabled = true
         
+        //MARK: Gerar Tile maps
+        for i in 1...3{
+            tileMapVisual = self.childNode(withName: "Mapa\(i)") as? SKTileMapNode
+            
+            if tileMapVisual != nil {
+                velocidadeDaPlataforma = moveTileMap(tileMapVisual)
+                createTileMapColliders(tileMapVisual)
+                
+            } else {
+                print("Tilemap node not found or not of type SKTileMapNode")
+            }
+        }
+        
+        //MARK: Botão de pause
         let spriteBtnPause = SKSpriteNode(texture: SKTexture(imageNamed: "pauseButtonBackground"))
         let btnPause:SKButtonNode = SKButtonNode(image: spriteBtnPause, label: SKLabelNode(text: ""), action: {
             if(menuAberto == false) {
@@ -65,11 +98,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         })
         btnPause.position = CGPoint(x: frame.maxX - 70, y: frame.maxY - 70)
         self.addChild(btnPause)
-        
-        //MARK: CÓDIGO ARTHUR...
-
-        criarControles()
-        criarPersonagem(in: self, personagem)
+    
         
         
     //MARK: GUSTAVO
@@ -86,6 +115,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func alternarControles() {
         setasVisiveis.toggle()
+
+        
+        //MARK: Texto na tela
+        gerarTexto(in: self, texto: texto)
+        
         
         if setasVisiveis {
             controlToggle.text = "Controles: Setas"
@@ -159,6 +193,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: TouchesBegan
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if(!apertou){
+            apertou = true
+            texto.isHidden = true
+            criarPersonagem(in: self, personagem)
+            criarControles(in: self)
+        }
+        //MARK: Verifica se os botoes foram pressionados e movimento o personagem
+
         for touch in touches {
             let touchLocation = touch.location(in: self)
             let touchedNodes = nodes(at: touchLocation)
@@ -184,6 +226,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         if personagem.physicsBody?.velocity.dy ?? 0 > 100 {
                             personagem.physicsBody?.velocity.dy = 500
                         }
+
                     }
                 }
             }
@@ -210,6 +253,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             velocidadeX = (joystickKnob.position.x - joystickBase.position.x) / 10
         }
     }
+
     
     func moverDeVolta() {
         let moverVoltar = SKAction.move(to: CGPoint(x: joystickBase.position.x, y: joystickBase.position.y), duration: 0.1)
@@ -229,42 +273,62 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     //MARK: TouchesEnded
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+
         if estaEmUso {
             moverDeVolta()
         }
+
         //MARK: Verificar se o botão foi despressionado para que o personagem pare de andar
         for touch in touches {
-                    let touchLocation = touch.location(in: self)
-                    
-                    if let touchedNode = self.nodes(at: touchLocation).first as? SKSpriteNode {
-                        if touchedNode.name == "Direito" {
-                            toqueDireitoAtivo = false
-                            if((personagem.physicsBody?.velocity.dy)! == 0.0){
-                                personagem.physicsBody?.velocity = CGVector.zero
-                            }
-                        } else if touchedNode.name == "Esquerdo" {
-                            toqueEsquerdoAtivo = false
-                            if((personagem.physicsBody?.velocity.dy)! == 0.0){
-                                personagem.physicsBody?.velocity = CGVector.zero
-                            }
-                        }
+            let touchLocation = touch.location(in: self)
+            
+            if let touchedNode = self.nodes(at: touchLocation).first as? SKSpriteNode {
+                if touchedNode.name == "Direito" {
+                    toqueDireitoAtivo = false
+                    if((personagem.physicsBody?.velocity.dy)! == 0.0){
+                        personagem.physicsBody?.velocity = CGVector.zero
+                    }
+                } else if touchedNode.name == "Esquerdo" {
+                    toqueEsquerdoAtivo = false
+                    if((personagem.physicsBody?.velocity.dy)! == 0.0){
+                        personagem.physicsBody?.velocity = CGVector.zero
                     }
                 }
+            }
+        }
         
     }
-
+    
     
     //MARK: DidBegin
     func didBegin(_ contact: SKPhysicsContact) {
         
-        //MARK: Verificar o contato para zerar o contador de pulo
+        
         if(contact.bodyA.node?.name == "Chao"){
             contadorPulo = 0
+            onMovingPlatform = true
+            personagem.physicsBody?.velocity.dy = 0.0
+            
         }
     }
     
+    //MARK: DidEnd
+    func didEnd(_ contact: SKPhysicsContact) {
+        if(contact.bodyA.node?.name == "Chao"){
+            onMovingPlatform = false
+        }
+    }
     
+
     override func update(_ currentTime: TimeInterval) {
+        
+        if onMovingPlatform {
+            let forceToApply = (personagem.physicsBody!.mass * physicsWorld.gravity.dy) - velocidadeDaPlataforma
+            personagem.physicsBody?.applyForce(CGVector(dx: 0, dy: forceToApply))
+        }
+        
+        resetMapPosition(mapa1: mapa1, mapa2: mapa2, mapHeight: mapHeight)
+        
         //MARK: fazer o personagem andar pressionando o botao.
         if estaEmUso{
             self.personagem.position.x += velocidadeX
@@ -281,7 +345,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 personagem.physicsBody?.velocity.dx = -220
             }
         }
+        
+        
     }
 }
 
+
+
+    
+    
+    
+}
 
