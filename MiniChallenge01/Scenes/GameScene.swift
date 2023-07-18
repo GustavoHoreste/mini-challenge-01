@@ -32,6 +32,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var mapHeight: CGFloat!
     var onMovingPlatform = false
     var velocidadeDaPlataforma: CGFloat = 0.0
+    var mapas: [SKTileMapNode] = []
+    
+    var imagemFundo: SKSpriteNode = SKSpriteNode(imageNamed: "background_1")
+    let objetoDummy = SKNode()
+
     
     var toqueEsquerdoAtivo:Bool = false // Verificar o toque do botao esquerdo
     var toqueDireitoAtivo:Bool = false // Verificar o toque no botao direito
@@ -44,7 +49,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         
-        
+        moverFundo(in: self, objetoDummy: objetoDummy)
+        self.addChild(objetoDummy)
         mapa1 = self.childNode(withName: "Mapa1") as? SKTileMapNode
         mapa2 = self.childNode(withName: "Mapa2") as? SKTileMapNode
         mapa3 = self.childNode(withName: "Mapa3") as? SKTileMapNode
@@ -58,6 +64,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //MARK: Gerar Tile maps
         for i in 1...3{
             tileMapVisual = self.childNode(withName: "Mapa\(i)") as? SKTileMapNode
+            
+            if let tileMapVisual = self.childNode(withName: "Mapa\(i)") as? SKTileMapNode {
+                
+                    mapas.append(tileMapVisual)
+                
+                }
             
             if tileMapVisual != nil {
                 velocidadeDaPlataforma = moveTileMap(tileMapVisual)
@@ -101,6 +113,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             texto.isHidden = true
             criarPersonagem(in: self, personagem)
             criarControles(in: self)
+            criarMoedor(in: self)
+            
         }
         
         
@@ -200,7 +214,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             personagem.physicsBody?.applyForce(CGVector(dx: 0, dy: forceToApply))
         }
         
-        resetMapPosition(mapa1: mapa1, mapa2: mapa2, mapHeight: mapHeight)
+        resetMapPosition(mapas: mapas, mapHeight: mapHeight)
         
         //MARK: fazer o personagem andar pressionando o botao.
         if(toqueDireitoAtivo){
