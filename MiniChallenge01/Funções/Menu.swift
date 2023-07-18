@@ -63,12 +63,6 @@ func openMenu(in scene:GameScene) {
         })
         btnExit.position = CGPoint(x: menuWidth * ((((0 * 100) / (menuWidth / 2)) / 100) / 2), y: menuHeight * ((((-148 * 100) / (menuHeight / 2)) / 100) / 2))
         menuBackground.addChild(btnExit)
-//
-//            let spriteBtnSairMenu:SKSpriteNode = SKSpriteNode(texture: SKTexture(imageNamed: ""), size: CGSize(width: 149, height: 76))
-//            let btnSairMenu:SKButtonNode = SKButtonNode(image: spriteBtnSairMenu, label: SKLabelNode(text: ""), action: {
-//                self.closeMenu()
-//            })
-//            btnSairMenu.position = CGPoint(x: 100, y: 170)
-//            menuBackground.addChild(btnSairMenu)
+
     }
 }
