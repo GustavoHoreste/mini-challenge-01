@@ -17,3 +17,4 @@ func gerarTexto(in scene:GameScene, texto:SKLabelNode){
     scene.addChild(texto)
     
 }
+

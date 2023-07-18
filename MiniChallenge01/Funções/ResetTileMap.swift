@@ -17,3 +17,4 @@ func resetMapPosition(mapas: [SKTileMapNode], mapHeight:CGFloat) {
     }
 }
 
+

@@ -21,3 +21,4 @@ func criarPersonagem(in scene:GameScene, _ personagem:SKSpriteNode){
     scene.addChild(personagem)
     
 }
+

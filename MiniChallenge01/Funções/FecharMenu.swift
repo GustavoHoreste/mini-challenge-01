@@ -14,3 +14,4 @@ func closeMenu() {
         menuAberto = false
     }
 }
+

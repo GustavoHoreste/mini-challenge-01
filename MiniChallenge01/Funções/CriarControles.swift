@@ -36,3 +36,4 @@ func criarControles(in scene:GameScene){
     controlePular.name = "Pular"
     scene.addChild(controlePular)
 }
+

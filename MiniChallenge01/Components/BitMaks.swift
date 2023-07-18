@@ -11,3 +11,4 @@ enum bitMasks: UInt32{
     case hero = 0b1
     case ground = 0b10
 }
+

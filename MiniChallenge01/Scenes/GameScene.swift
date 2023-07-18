@@ -26,10 +26,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let controlePular:SKSpriteNode = SKSpriteNode()
     var velocidadeX = 0.0
     
-
+    
     let personagem:SKSpriteNode = SKSpriteNode(imageNamed: "Cavaleiro")
     var contadorPulo:Int = 0
-
+    
     var apertou:Bool = false // Verificar se o usuario apertou na tela
     let texto: SKLabelNode = SKLabelNode() // Texto na tela
     
@@ -44,13 +44,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var imagemFundo: SKSpriteNode = SKSpriteNode(imageNamed: "background_1")
     let objetoDummy = SKNode()
-
+    
     
     var toqueEsquerdoAtivo:Bool = false // Verificar o toque do botao esquerdo
     var toqueDireitoAtivo:Bool = false // Verificar o toque no botao direito
-
     
-
+    
+    
     
     var estaEmUso = false
     var controlToggle: SKLabelNode!
@@ -60,7 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var joystickActive: Bool = false
     var joystickDirection: CGVector = .zero
     
-
+    
     //MARK: DidMove
     override func didMove(to view: SKView) {
         
@@ -83,9 +83,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if let tileMapVisual = self.childNode(withName: "Mapa\(i)") as? SKTileMapNode {
                 
-                    mapas.append(tileMapVisual)
+                mapas.append(tileMapVisual)
                 
-                }
+            }
             
             if tileMapVisual != nil {
                 velocidadeDaPlataforma = moveTileMap(tileMapVisual)
@@ -110,29 +110,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         })
         btnPause.position = CGPoint(x: frame.maxX - 70, y: frame.maxY - 70)
         self.addChild(btnPause)
-    
+        
+        gerarTexto(in: self, texto: texto)
         
         
-    //MARK: GUSTAVO
+        //MARK: GUSTAVO
         
-
+        
         self.view?.isMultipleTouchEnabled = true
         controlToggle = SKLabelNode(text: "Controles: Setas")
         controlToggle.position = CGPoint(x: frame.minX + 100, y: frame.maxY - 100)
         controlToggle.fontSize = 20
         controlToggle.fontColor = .white
         addChild(controlToggle)
-        mostrarControlesSetas()
+//        mostrarControlesSetas()
     }
     
     func alternarControles() {
         setasVisiveis.toggle()
 
-        
+
         //MARK: Texto na tela
         gerarTexto(in: self, texto: texto)
-        
-        
+
+
         if setasVisiveis {
             controlToggle.text = "Controles: Setas"
             mostrarControlesSetas()
@@ -143,23 +144,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func mostrarControlesSetas() {
-            controleEsquerdo.isHidden = false
-            controleDireito.isHidden = false
-            joystickBase.removeFromParent()
-            joystickKnob.removeFromParent()
-        }
+        controleEsquerdo.isHidden = false
+        controleDireito.isHidden = false
+        joystickBase.removeFromParent()
+        joystickKnob.removeFromParent()
+    }
 
-        func mostrarControleJoystick() {
-            controleEsquerdo.isHidden = true
-            controleDireito.isHidden = true
-            joystickBase.removeFromParent()
-            joystickKnob.removeFromParent()
-            addChild(joystickBase)
-            addChild(joystickKnob)
-        }
-
+    func mostrarControleJoystick() {
+        controleEsquerdo.isHidden = true
+        controleDireito.isHidden = true
+        joystickBase.removeFromParent()
+        joystickKnob.removeFromParent()
+        addChild(joystickBase)
+        addChild(joystickKnob)
+    }
 
     
+
     func criarControles() {
         controleEsquerdo.size = CGSize(width: 100, height: 100)
         controleEsquerdo.position = CGPoint(x: self.frame.midX - 200, y: -400)
@@ -190,7 +191,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         joystickBase.alpha = 0.5
         addChild(joystickBase)
 
-                
+
         let joystickKnobRadius: CGFloat = 30
         joystickKnob = SKShapeNode(circleOfRadius: joystickKnobRadius)
         joystickKnob.fillColor = .gray
@@ -200,8 +201,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         joystickKnob.alpha = 0.8
         addChild(joystickKnob)
     }
-
-
+    
+    
     
     //MARK: TouchesBegan
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -209,20 +210,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             apertou = true
             texto.isHidden = true
             criarPersonagem(in: self, personagem)
-            criarControles(in: self)
+            MiniChallenge01.criarControles(in: self)
             criarMoedor(in: self)
             
         }
         //MARK: Verifica se os botoes foram pressionados e movimento o personagem
-
+        
         for touch in touches {
             let touchLocation = touch.location(in: self)
             let touchedNodes = nodes(at: touchLocation)
-
+            
             for node in touchedNodes {
                 if node == controlToggle {
-
-                    alternarControles()
+                    
+//                    alternarControles()
                 } else if node == joystickBase {
                     estaEmUso = true
                     
@@ -231,8 +232,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     personagem.physicsBody?.applyImpulse(CGVector(dx: -10, dy: 0))
                     
                 } else if node.name == "Direito" {
-                        toqueDireitoAtivo = !estaEmUso
-                        personagem.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
+                    toqueDireitoAtivo = !estaEmUso
+                    personagem.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
                 } else if node.name == "Pular" {
                     if contadorPulo < 2 {
                         contadorPulo += 1
@@ -240,35 +241,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         if personagem.physicsBody?.velocity.dy ?? 0 > 100 {
                             personagem.physicsBody?.velocity.dy = 500
                         }
-
+                        
                     }
                 }
             }
         }
     }
     
-
+    
     func moverPersonagem(toque: UITouch) {
         let localicao = toque.location(in: self)
-        
+
         if estaEmUso {
             let distanciaX = localicao.x - joystickBase.position.x
-            
+
             // Limitar o movimento do knob ao tamanho da parte traseira do joystick (joystickBase)
             let maxDistanceX = joystickBase.frame.width / 2
-            
+
             if abs(distanciaX) <= maxDistanceX {
                 joystickKnob.position.x = localicao.x
             } else {
                 let directionX = distanciaX < 0 ? -1.0 : 1.0
                 joystickKnob.position.x = joystickBase.position.x + directionX * maxDistanceX
             }
-            
+
             velocidadeX = (joystickKnob.position.x - joystickBase.position.x) / 10
         }
     }
 
-    
+
     func moverDeVolta() {
         let moverVoltar = SKAction.move(to: CGPoint(x: joystickBase.position.x, y: joystickBase.position.y), duration: 0.1)
         moverVoltar.timingMode = .linear
@@ -282,16 +283,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.moverPersonagem(toque: toque)
         }
     }
-
     
-
+    
+    
     //MARK: TouchesEnded
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+        
         if estaEmUso {
-            moverDeVolta()
+//            moverDeVolta()
         }
-
+        
         //MARK: Verificar se o botão foi despressionado para que o personagem pare de andar
         for touch in touches {
             let touchLocation = touch.location(in: self)
@@ -333,7 +334,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-
+    
     override func update(_ currentTime: TimeInterval) {
         
         if onMovingPlatform {
@@ -344,9 +345,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         resetMapPosition(mapas: mapas, mapHeight: mapHeight)
         
         //MARK: fazer o personagem andar pressionando o botao.
-        if estaEmUso{
-            self.personagem.position.x += velocidadeX
-        }
         if(toqueDireitoAtivo){
             personagem.physicsBody?.applyImpulse(CGVector(dx: 10, dy: 0))
             if((personagem.physicsBody?.velocity.dx)! > 10 ){
@@ -364,10 +362,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 }
 
-
-
+//MARK: Função para o preview do SwiftUI - Arthur
+struct MyView: UIViewControllerRepresentable{
+    typealias UIViewControllerType = ViewController
     
+    func makeUIViewController(context: Context) -> ViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard
+            let viewController = storyboard.instantiateInitialViewController()
+        else{
+            fatalError("Cannot load ViewController from main storyboard")
+        }
+        return viewController as! ViewController
+    }
     
-    
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
+        // Updates the state of the specified view controller with new information from SwiftUI.
+    }
 }
+struct ControllerView_Previews: PreviewProvider {
+    static var previews: some View {
+        MyView()
+            .ignoresSafeArea()
+    }
+}
+
+
+
+
+
+
 

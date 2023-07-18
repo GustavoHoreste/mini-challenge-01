@@ -46,3 +46,4 @@ func createTileMapColliders(_ tilemap: SKTileMapNode) {
     }
 }
 
+

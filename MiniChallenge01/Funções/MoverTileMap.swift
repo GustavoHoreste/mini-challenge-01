@@ -20,3 +20,4 @@ func moveTileMap(_ map: SKTileMapNode) -> CGFloat {
     map.run(repeatAction)
     return map.mapSize.height / CGFloat(moveDuration)
 }
+
