@@ -224,7 +224,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
 
     func moverDeVolta() {
-        estaEmUsoJoy.toggle()
+//        estaEmUsoJoy.toggle()
         velocidadeX = 0.0
         let moverVoltar = SKAction.move(to: CGPoint(x: joystickBase.position.x, y: joystickBase.position.y), duration: 0.1)
         moverVoltar.timingMode = .linear
